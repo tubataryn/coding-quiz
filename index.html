@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="./Assets/css/style.css" />
     <title>Coding Quiz</title>
 </head>
 <body>
@@ -11,63 +11,68 @@
         <h1 class="title">Coding Quiz Challenge</h1>
         <p class="instructions">Try to answer the following code related questions within the time limit.
              Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
-             <button class="btn">Start Quiz</button>
+             <button id="btn">Start Quiz</button>
     </section>
 
     <section class="questions">
-        <h2 class="q">Commonly used data types DO NOT include:</h2>
-        <ol class="a">
-            <li>strings</li>
-            <li>booleans</li>
-            <li>alerts</li>
-            <li>numbers</li>
+        <h2 id="q">Commonly used data types DO NOT include:</h2>
+        <ol id="a">
+            <li><button>strings</button></li>
+            <li><button>booleans</button></li>
+            <li><button>alerts</button></li>
+            <li><button>numbers</button></li>
         </ol>
     </section>
 
     <section class="questions">
-        <h2 class="q">The condition in an if / else statement is enclosed with _____.</h2>
-        <ol class="a">
-            <li>quotes</li>
-            <li>curly brackets</li>
-            <li>parenthesis</li>
-            <li>square brackets</li>
+        <h2 id="q">The condition in an if / else statement is enclosed with _____.</h2>
+        <ol id="a">
+            <li><button>quotes</button></li>
+            <li><button>curly brackets</button></li>
+            <li><button>parenthesis</button></li>
+            <li><button>square brackets</button></li>
         </ol>
     </section>
 
     <section class="questions">
-        <h2 class="q">Arrays in JavaScript can be used to store _____.</h2>
-        <ol class="a">
-            <li>numbers and strings</li>
-            <li>other arrays</li>
-            <li>booleans</li>
-            <li>all of the above</li>
+        <h2 id="q">Arrays in JavaScript can be used to store _____.</h2>
+        <ol id="a">
+            <li><button>numbers and strings</button></li>
+            <li><button>other arrays</button></li>
+            <li><button>booleans</button></li>
+            <li><button>all of the above</button></li>
         </ol>
     </section>
 
     <section class="questions">
-        <h2 class="q">String balues must be enclosed within _____ when being assigned to variables.</h2>
-        <ol class="a">
-            <li>commas</li>
-            <li>curly brackets</li>
-            <li>quotes</li>
-            <li>parenthesis</li>
+        <h2 id="q">String balues must be enclosed within _____ when being assigned to variables.</h2>
+        <ol id="a">
+            <li><button>commas</button></li>
+            <li><button>curly brackets</button></li>
+            <li><button>quotes</button></li>
+            <li><button>parenthesis</button></li>
         </ol>
     </section>
 
     <section class="questions">
-        <h2 class="q">A very useful tool used during development and debugging for printing content to the debugger is:</h2>
-        <ol class="a">
-            <li>JavaScript</li>
-            <li>terminal/bash</li>
-            <li>for loops</li>
-            <li>console.log</li>
+        <h2 id="q">A very useful tool used during development and debugging for printing content to the debugger is:</h2>
+        <ol id="a">
+            <li><button>JavaScript</button></li>
+            <li><button>terminal/bash</button></li>
+            <li><button>for loops</button></li>
+            <li><button>console.log</button></li>
         </ol>
     </section>
 
-    <section class="score-input"></section>
+    <section class="score-input">
+        <label for="initials">Enter your initials</label>
+        <input type="initials" name="initials" id="initials" placeholder="your name" />
+    </section>
 
-    <section class="score-table"></section>
-    
+    <section class="score-table">
+        
+    </section>
+
     <script src="./Assets/js/script.js"></script>
 </body>
 </html>
