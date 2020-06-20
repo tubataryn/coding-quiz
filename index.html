@@ -7,30 +7,26 @@
     <title>Coding Quiz</title>
 </head>
 <body>
-    <section class="intro">
+    <section class="intro" id="intro">
         <h1 class="title">Coding Quiz Challenge</h1>
         <p class="instructions">Try to answer the following code related questions within the time limit.
              Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
              <button id="btn">Start Quiz</button>
     </section>
 
-    <section class="questions">
-        <h2 id="q">Commonly used data types DO NOT include:</h2>
-        <ol id="a">
-            <li><button>strings</button></li>
-            <li><button>booleans</button></li>
-            <li><button>alerts</button></li>
-            <li><button>numbers</button></li>
-        </ol>
-    </section>
+    <div id="questions">
+        <h2 id="q"></h2>
+            <div id="options">
+            </div>
+    </div>
 
-    <section class="questions">
+    <!--<section class="questions">
         <h2 id="q">The condition in an if / else statement is enclosed with _____.</h2>
         <ol id="a">
-            <li><button>quotes</button></li>
-            <li><button>curly brackets</button></li>
-            <li><button>parenthesis</button></li>
-            <li><button>square brackets</button></li>
+            <li><button id="incorrect">quotes</button></li>
+            <li><button id="incorrect">curly brackets</button></li>
+            <li><button id="correct">parenthesis</button></li>
+            <li><button id="incorrect">square brackets</button></li>
         </ol>
     </section>
 
@@ -70,8 +66,9 @@
     </section>
 
     <section class="score-table">
-        
-    </section>
+        <h2 class="title">High Scores</h2>
+
+    </section>-->
 
     <script src="./Assets/js/script.js"></script>
 </body>
