@@ -22,6 +22,12 @@ var questionIndex = 0
 var userAnswer
 var timerEl = document.getElementById("countdown")
 var timeLeft = 60;
+var nameInput = document.getElementById("name")
+var submitButton = document.getElementById("submit")
+var score = timeLeft
+var displayName = localStorage.getItem("name")
+var nameSpan = document.getElementById("name-span")
+var msgDiv = document.getElementById("msg")
 
 function start() {
     var startQuiz = document.getElementById("intro")
@@ -38,7 +44,7 @@ function startTimer() {
         }
         else{
            alert("You lose!")
-           return
+           highScores()
         }
     } , 1000);
 }
@@ -81,9 +87,33 @@ function questionClick() {
 }
 
 function highScores() {
-    var nameInput = document.getElementById("name")
-    
+    if(displayName===undefined){
+        return
+    }
+    else{
+        nameSpan.innerHTML=displayName
+    }
 }
 
+function displayMessage(type, message) {
+    msgDiv.textContent = message
+    msgDiv.setAttribute("class", type);
+}
+
+submitButton.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    var name = document.getElementById("name").value;
+    console.log(name)
+    if(name === "") {
+        displayMessage("error", "Name cannot be blank");
+    }
+    else {
+        displayMessage("success", "Name added");
+
+        localStorage.setItem("name", name);
+        highScores()
+    }
+});
 
 startButton.onclick=start
