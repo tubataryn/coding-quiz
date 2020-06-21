@@ -1,5 +1,6 @@
 var questions = [
-    {title: "Commonly used data types DO NOT include:", options: ["strings", "booleans", "alerts", "numbers"],
+    {title: "Commonly used data types DO NOT include:",
+    options: ["strings", "booleans", "alerts", "numbers"],
     answer: "alerts"},
     {title: "The condition in an if / else statement is enclosed with _____.",
     options: ["quotes", "cutly brackets", "parenthesis", "square brackets"], 
@@ -59,5 +60,4 @@ function changeQuestions() {
     getQuestions()
     
 }
-
 startButton.onclick=start
