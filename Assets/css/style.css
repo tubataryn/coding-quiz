@@ -1,0 +1,12 @@
+.title {
+    text-emphasis: bold;
+    font-size: 60px;
+    color: rgb(85, 9, 122);
+}
+.instructions {
+    font-size: 20px;
+}
+
+.timer {
+    font-size: 15px;
+}

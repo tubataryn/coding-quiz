@@ -15,23 +15,30 @@
     </section>
 
     <div class="timer" id="timer">
-        <h2 class="countdown" id="countdown"></h3>
+        <h2 class="countdown" id="countdown"></h2>
     </div>
 
     <div id="questions">
-        <h3 id="q"></h2>
+        <h2 id="q"></h2>
             <div id="options">
             </div>
     </div>
 
     <div class="scores" id="scores">
-        <h4 class="title" id="title">High Scores</h4>
-    </br>
-        <lable for="name">Enter your initials:</lable>
-        <input type="text" name="name" id="name" placeholder="Big Winner" />
-        <button id="submit">Submit</button>
+        <h2 class="title" id="title">High Scores</h2>
+        <form method="POST">
+            <lable for="name">Enter your initials:</lable>
+            <input type="text" name="name" id="name" placeholder="Big Winner" />
+            <div id="msg"></div>
+            <button id="submit">Submit</button>
+        </form>
     </div>
 
+    <div class="chart">
+        <h2 class="title" id="title">High Scores</h2>
+        <p><span id="user-name"></span></p>
+        <p><span id="user-score"></span></p>
+    </div>
 
     <script src="./Assets/js/script.js"></script>
 </body>

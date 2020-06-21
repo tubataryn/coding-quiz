@@ -28,6 +28,8 @@ var score = timeLeft
 var displayName = localStorage.getItem("name")
 var nameSpan = document.getElementById("name-span")
 var msgDiv = document.getElementById("msg")
+var finalScore = ""
+var scoreSpan = document.getElementById("user-score")
 
 function start() {
     var startQuiz = document.getElementById("intro")
@@ -38,18 +40,28 @@ function start() {
 function startTimer() {
     
     var timeInterval = setInterval(function() {
+
         timeLeft = timeLeft-1
+
         if(timeLeft>=1) {
+
             timerEl.innerHTML= +timeLeft
+            //finalScore = timeLeft
+
         }
         else{
-           alert("You lose!")
-           highScores()
+
+            finalScore = timeLeft
+
+          // endGame()
+           
         }
     } , 1000);
 }
 
 function getQuestions() {
+
+
     var currentTitle = questions[questionIndex]
     var displayTitle = document.getElementById("q")
     var displayOptions = document.getElementById("options")
@@ -69,7 +81,7 @@ function getQuestions() {
         var button = document.querySelector(".option")
         console.log(button)
         button.addEventListener("click", questionClick)
-    })
+    });
 }
 
 function questionClick() {
@@ -83,8 +95,26 @@ function questionClick() {
         timeLeft = timeLeft-10
     }
     questionIndex++
-    getQuestions()
+    console.log("THis is how long our array ",questions.length)
+
+    if(questionIndex>4) {
+        endGame()
+    }
+    else {
+    getQuestions()}
+
 }
+
+function endGame() {
+    //alert("Game Over")
+    document.getElementById("questions").innerHTML=""
+    finalScore =timerEl.innerHTML
+    timerEl.innerHTML=""
+    console.log("Your final score: ", finalScore)
+
+    highScores()
+
+}////end endGaame fct def
 
 function highScores() {
     if(displayName===undefined){
@@ -92,6 +122,7 @@ function highScores() {
     }
     else{
         nameSpan.innerHTML=displayName
+        scoreSpan.innerHTML=finalScore
     }
 }
 
