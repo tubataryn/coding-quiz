@@ -18,6 +18,7 @@ var questions = [
 var questionsSection = document.getElementById("questions")
 var startButton = document.getElementById("btn")
 var questionIndex = 0
+var userAnswer
 
 function start() {
     var startQuiz = document.getElementById("intro")
@@ -29,7 +30,14 @@ function getQuestions() {
     var currentTitle = questions[questionIndex]
     var displayTitle = document.getElementById("q")
     var displayOptions = document.getElementById("options")
-    
+
+    function defineUserAnswer() {
+        console.log("calling function")
+        var userAnswer = button.textContent
+        console.log(userAnswer)
+    }
+
+    displayOptions.innerHTML = "";
     displayTitle.textContent = currentTitle.title
     currentTitle.options.forEach(function(option, i){
         var choiceEl = document.createElement("button")
@@ -39,6 +47,9 @@ function getQuestions() {
         questionsSection.appendChild(choiceEl)
         displayOptions.appendChild(choiceEl)
         choiceEl.onclick=changeQuestions
+        var button = document.querySelector(".option")
+        console.log(button)
+        button.addEventListener("click", defineUserAnswer)
     })
 }
 
@@ -46,10 +57,6 @@ function getQuestions() {
 function changeQuestions() {
     questionIndex++
     getQuestions()
-    if (choiceEl===questions.answer) {
-        alert("correct!")
-    }
-    else {alert("wrong")}
     
 }
 
