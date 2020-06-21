@@ -3,7 +3,7 @@ var questions = [
     options: ["strings", "booleans", "alerts", "numbers"],
     answer: "alerts"},
     {title: "The condition in an if / else statement is enclosed with _____.",
-    options: ["quotes", "cutly brackets", "parenthesis", "square brackets"], 
+    options: ["quotes", "curly brackets", "parenthesis", "square brackets"], 
     answer: "parenthesis"},
     {title: "Arrays in JavaScript can be used to store _____.", 
     options: ["numbers and strings", "other arrays", "booleans", "all of the above"],
@@ -20,11 +20,27 @@ var questionsSection = document.getElementById("questions")
 var startButton = document.getElementById("btn")
 var questionIndex = 0
 var userAnswer
+var timerEl = document.getElementById("countdown")
+var timeLeft = 60;
 
 function start() {
     var startQuiz = document.getElementById("intro")
-    //ADD TIMER HERE
     getQuestions()
+    startTimer()
+}
+
+function startTimer() {
+    
+    var timeInterval = setInterval(function() {
+        timeLeft = timeLeft-1
+        if(timeLeft>=1) {
+            timerEl.innerHTML= +timeLeft
+        }
+        else{
+           alert("You lose!")
+           return
+        }
+    } , 1000);
 }
 
 function getQuestions() {
@@ -32,11 +48,7 @@ function getQuestions() {
     var displayTitle = document.getElementById("q")
     var displayOptions = document.getElementById("options")
 
-    function defineUserAnswer() {
-        console.log("calling function")
-        var userAnswer = button.textContent
-        console.log(userAnswer)
-    }
+    
 
     displayOptions.innerHTML = "";
     displayTitle.textContent = currentTitle.title
@@ -47,17 +59,31 @@ function getQuestions() {
         choiceEl.textContent = option
         questionsSection.appendChild(choiceEl)
         displayOptions.appendChild(choiceEl)
-        choiceEl.onclick=changeQuestions
+        choiceEl.onclick=questionClick
         var button = document.querySelector(".option")
         console.log(button)
-        button.addEventListener("click", defineUserAnswer)
+        button.addEventListener("click", questionClick)
     })
 }
 
-
-function changeQuestions() {
+function questionClick() {
+    var guess = (this.value)
+    var answer = (questions[questionIndex].answer)
+    if (guess===answer) {
+        alert("correct")
+    }
+    else {
+        alert("wrong")
+        timeLeft = timeLeft-10
+    }
     questionIndex++
     getQuestions()
+}
+
+function highScores() {
+    var nameInput = document.getElementById("name")
     
 }
+
+
 startButton.onclick=start
